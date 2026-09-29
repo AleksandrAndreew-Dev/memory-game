@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AleksandrAndreew-Dev/memory-game/issues"
   },
-  "homepage": "https://github.com/AleksandrAndreew-Dev/memory-game#readme"
+  "homepage": "https://github.com/AleksandrAndreew-Dev/memory-game#readme",
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
 }
