@@ -1,2 +1,3 @@
 # memory-game
-Memory Game
+
+🔗 **Играть:** [aleksandrandreew-dev.github.io/memory-game](https://aleksandrandreew-dev.github.io/memory-game/)
