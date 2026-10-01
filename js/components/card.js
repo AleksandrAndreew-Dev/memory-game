@@ -12,3 +12,13 @@ export function createCard(cardData, index) {
   card.append(img);
   return card;
 }
+
+export function updateCard(cardEl, cardData) {
+  const shouldShowImage =
+    cardData.isOpen || cardData.isMatched;
+  cardEl.classList.toggle('card--open', shouldShowImage);
+  cardEl.classList.toggle(
+    'card--matched',
+    cardData.isMatched,
+  );
+}
