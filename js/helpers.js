@@ -21,3 +21,7 @@ export function shuffle(arr) {
   return array
 }
 
+export function buildDeck(cards) {
+  const doubled = [...cards, ...cards]
+  return shuffle(doubled)
+}
