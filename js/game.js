@@ -1,9 +1,34 @@
 import { state } from './state.js';
-import { updateCard } from './components/card.js';
 import { updateStats } from './components/stats.js';
 import { getModal } from './components/modal.js';
 import { handleWin } from './components/win-content.js';
 import { cards } from './data.js';
+import { buildDeck } from './helpers.js';
+import {
+  createCard,
+  updateCard,
+} from './components/card.js';
+
+export function startNewGame() {
+  clearTimeout(state.closeTimeoutId);
+  state.closeTimeoutId = null;
+
+  state.deck = buildDeck(cards);
+  state.moves = 0;
+  state.pairs = 0;
+  state.firstCard = null;
+  state.isLocked = false;
+
+  const board = document.querySelector('.board');
+  board.replaceChildren();
+  state.deck.forEach((cardData, index) => {
+    board.append(createCard(cardData, index));
+  });
+
+  updateStats(state);
+
+  getModal().close();
+}
 
 export function handleCardClick(e) {
   const cardEl = e.target.closest('.card');
