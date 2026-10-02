@@ -1,20 +1,16 @@
 import { state } from './state.js';
 import { updateCard } from './components/card.js';
 import { updateStats } from './components/stats.js';
+import { getModal } from './components/modal.js';
+import { handleWin } from './components/win-content.js';
+import { cards } from './data.js';
 
 export function handleCardClick(e) {
-  console.log('=== click ===');
-  console.log('target:', e.target);
-  console.log('closest .card:', e.target.closest('.card'));
   const cardEl = e.target.closest('.card');
   if (!cardEl) return;
   const index = Number(cardEl.dataset.index);
   const cardData = state.deck[index];
-  console.log('cardData:', cardData);
-  console.log('state.isLocked:', state.isLocked);
-  console.log('state.firstCard:', state.firstCard);
-  console.log('firstCard?.index:', state.firstCard?.index);
-
+  if (state.pairs === 8) return;
   if (state.isLocked) return;
   if (state.firstCard?.index === cardData.index) return;
 
@@ -27,9 +23,6 @@ export function handleCardClick(e) {
   } else {
     checkMatch(cardEl, cardData);
   }
-  console.log('cardData.isOpen:', cardData.isOpen);
-  console.log('cardData.isMatched:', cardData.isMatched);
-  console.log('PASSED GUARDS'); // ← после всех проверок
 }
 
 function openCard(cardEl, cardData) {
@@ -60,6 +53,11 @@ function checkMatch(cardEl, cardData) {
     updateCard(cardEl, cardData);
 
     state.firstCard = null;
+    if (state.pairs === 8) {
+      const randomCard =
+        cards[Math.floor(Math.random() * cards.length)];
+      handleWin(getModal(), randomCard, state.moves);
+    }
   } else {
     closeCards(firstEl, state.firstCard, cardEl, cardData);
   }
