@@ -93,3 +93,20 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .win__body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .win__image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .win__info {
+    text-align: center;
+    align-items: center;
+  }
+}
