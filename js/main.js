@@ -9,14 +9,17 @@ import {
   updateStats,
 } from './components/stats.js';
 
-const stats = createStats();
-updateStats(state);
 state.deck = buildDeck(cards);
+
 const header = createHeader();
+const stats = createStats();
 const board = createBoard(state.deck);
+
 board.addEventListener('click', handleCardClick);
 
 const app = document.createElement('div');
 app.classList.add('app');
 app.append(header, stats, board);
 document.body.append(app);
+
+updateStats(state);
