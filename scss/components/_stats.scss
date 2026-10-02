@@ -12,3 +12,10 @@
 .stats__pairs {
   font-weight: 600;
 }
+
+@media (max-width: 600px) {
+  .stats {
+    gap: 16px;
+    font-size: 1rem;
+  }
+}

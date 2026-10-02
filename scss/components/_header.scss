@@ -41,3 +41,19 @@
     color: #0a0a0a;
   }
 }
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header__logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .header__title {
+    font-size: 1.25rem;
+  }
+}
