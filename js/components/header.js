@@ -13,7 +13,7 @@ export function createHeader() {
   const logo = createElement('img', {
     className: 'header__logo',
   });
-  logo.src = '../assets/images/logo/logo-1.png';
+  logo.src = './assets/images/logo/logo-1.png';
   logo.alt = 'Star Wars logo';
   headerTitle.prepend(logo);
 
