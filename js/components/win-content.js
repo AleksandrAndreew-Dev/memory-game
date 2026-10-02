@@ -4,11 +4,23 @@ export function createWinContent(card, moves) {
   const winContainer = createElement('div', {
     className: 'win',
   });
+  const winBody = createElement('div', {
+    className: 'win__body',
+  });
+  const winInfo = createElement('div', {
+    className: 'win__info',
+  });
+  const winActions = createElement('div', {
+    className: 'win__actions',
+  });
   const h2 = createElement('h2', {
     className: 'win__title',
     text: 'You win!',
   });
-  const img = createElement('img');
+
+  const img = createElement('img', {
+    className: 'win__image',
+  });
   img.src = card.image;
   img.alt = card.name;
   const winName = createElement('h3', {
@@ -19,7 +31,7 @@ export function createWinContent(card, moves) {
     className: 'win__quote',
     text: card.quote,
   });
-  const movesWin = createElement('span', {
+  const winMoves = createElement('span', {
     className: 'win__moves',
     text: `Moves: ${moves}`,
   });
@@ -37,15 +49,11 @@ export function createWinContent(card, moves) {
   closeBtn.classList.add('win__button--close');
   closeBtn.dataset.action = 'close';
 
-  winContainer.append(
-    h2,
-    img,
-    winName,
-    quote,
-    movesWin,
-    newGameBtn,
-    closeBtn,
-  );
+  winActions.append(newGameBtn, closeBtn);
+  winInfo.append(winName, quote, winMoves, winActions);
+  winBody.append(img, winInfo);
+  winContainer.append(h2, winBody);
+
   return winContainer;
 }
 
