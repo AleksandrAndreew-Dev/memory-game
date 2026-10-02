@@ -9,7 +9,8 @@ import {
 } from './components/stats.js';
 import { getModal } from './components/modal.js';
 import { startNewGame, handleCardClick } from './game.js';
-
+import { getResults } from './storage.js';
+import { createLeadersContent } from './components/leaders-content.js';
 state.deck = buildDeck(cards);
 
 const header = createHeader();
@@ -27,7 +28,9 @@ header.addEventListener('click', (e) => {
     startNewGame();
   }
   if (action === 'leaders') {
-    return;
+    const results = getResults();
+    const content = createLeadersContent(results);
+    modal.open(content);
   }
 });
 

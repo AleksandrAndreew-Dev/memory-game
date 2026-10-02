@@ -8,6 +8,7 @@ import {
   createCard,
   updateCard,
 } from './components/card.js';
+import { saveResult } from './storage.js';
 
 export function startNewGame() {
   clearTimeout(state.closeTimeoutId);
@@ -79,6 +80,7 @@ function checkMatch(cardEl, cardData) {
 
     state.firstCard = null;
     if (state.pairs === 8) {
+      saveResult(state.moves);
       const randomCard =
         cards[Math.floor(Math.random() * cards.length)];
       handleWin(getModal(), randomCard, state.moves);
