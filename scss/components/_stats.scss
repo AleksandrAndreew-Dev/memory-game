@@ -1,0 +1,14 @@
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 1.25rem;
+  padding: 12px 0;
+  color: #ffd700; // или #ffcc00
+  font-weight: 600;
+}
+
+.stats__moves,
+.stats__pairs {
+  font-weight: 600;
+}

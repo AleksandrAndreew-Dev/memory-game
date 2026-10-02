@@ -55,3 +55,19 @@
     }
   }
 }
+
+.card {
+  border: 2px solid rgba(255, 215, 0, 0.3); // полупрозрачное золото
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    border-color: #ffd700; // яркое золото на hover
+    transform: scale(1.03);
+  }
+}
+
+.card--matched {
+  border-color: #ffd700; // или оставь как было (с box-shadow)
+}
