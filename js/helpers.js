@@ -1,0 +1,42 @@
+export function createElement(tag, options = {}) {
+  const { className, text } = options;
+  const el = document.createElement(tag);
+  if (className) {
+    el.classList.add(className);
+  }
+  if (text != null) {
+    el.textContent = text;
+  }
+  return el;
+}
+
+function shuffle(arr) {
+  const array = [...arr];
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+export function buildDeck(cards) {
+  const doubled = [...cards, ...cards];
+  const shuffled = shuffle(doubled);
+  return shuffled.map((card, index) => ({
+    ...card,
+    index,
+    isOpen: false,
+    isMatched: false,
+  }));
+}
+
+export function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(
+    2,
+    '0',
+  );
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}

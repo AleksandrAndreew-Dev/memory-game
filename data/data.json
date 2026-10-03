@@ -1,0 +1,50 @@
+[
+  {
+    "id": "vader",
+    "name": "Darth Vader",
+    "image": "./assets/images/cards/card-1.png",
+    "quote": "No, I am your father."
+  },
+  {
+    "id": "c3po-r2d2",
+    "name": "C3-PO & R2-D2",
+    "image": "./assets/images/cards/card-2.png",
+    "quote": "I suggest a new strategy, R2: let the Wookiee win."
+  },
+  {
+    "id": "solo",
+    "name": "Han Solo",
+    "image": "./assets/images/cards/card-3.png",
+    "quote": "I know."
+  },
+  {
+    "id": "luke",
+    "name": "Luke Skywalker",
+    "image": "./assets/images/cards/card-4.png",
+    "quote": "I am a Jedi, like my father before me."
+  },
+  {
+    "id": "kenobi",
+    "name": "Obi-Wan Kenobi",
+    "image": "./assets/images/cards/card-5.png",
+    "quote": "Hello there."
+  },
+  {
+    "id": "leia",
+    "name": "Princess Leia",
+    "image": "./assets/images/cards/card-6.png",
+    "quote": "Help me, Obi-Wan Kenobi. You're my only hope."
+  },
+  {
+    "id": "yoda",
+    "name": "Master Yoda",
+    "image": "./assets/images/cards/card-7.png",
+    "quote": "Do. Or do not. There is no try."
+  },
+  {
+    "id": "fett",
+    "name": "Boba Fett",
+    "image": "./assets/images/cards/card-8.png",
+    "quote": "He's no good to me dead."
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "memory-game",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Memory Game",
+  "main": "js/main.js",
+  "scripts": {
+    "sass": "sass --watch scss/main.scss:css/style.css",
+    "sass:build": "sass scss/main.scss:css/style.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandrAndreew-Dev/memory-game.git"
+  },
+  "keywords": [],
+  "author": "Aleksandr Andreew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AleksandrAndreew-Dev/memory-game/issues"
+  },
+  "homepage": "https://github.com/AleksandrAndreew-Dev/memory-game/",
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
+}

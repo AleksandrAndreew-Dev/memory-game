@@ -1,0 +1,4 @@
+node_modules/
+assets/images/cards/unused/
+dist/
+css/*.map
